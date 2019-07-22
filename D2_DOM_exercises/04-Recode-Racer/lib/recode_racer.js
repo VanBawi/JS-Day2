@@ -1,35 +1,31 @@
 // TODO: write your code here
-document.addEventListener("DOMContentLoaded", function () {
-    document.addEventListener("keyup", handleKeyPress);
-})
 
-$(document).ready(function () {
-  $(document).keyup(handleKeyPress)
-  })
-  
-function handleKeyPress (e) {
-if (e.which == 81) {
-    movePlayer(1)
+function keyPress(x){
+  if (x.keyCode === 81){
+    var first = document.querySelector("#player1_race .active");
+    var fir =first.nextElementSibling;
+    if (fir === null){
+      alert("Red car has won!");
+    } else{
+      first.classList.remove("active");
+      fir.classList.add("active");
     }
-  
-if (e.which == 80) {
-    movePlayer(2)
 }
+ 
+  if (x.keyCode === 80){
+    var second = document.querySelector("#player2_race .active");
+    var sec =second.nextElementSibling;
+    if (sec === null){
+      alert("Blue car has won!");
+    } else{
+      second.classList.remove("active");
+      sec.classList.add("active");
+    }
   }
-  
-function movePlayer (playerInt) {
-    var cell = $(".active" + playerInt)
-    var nextCell = $(cell).next()
-  
-    checkForVictory(nextCell, playerInt)
-  
- cell.removeClass()
- nextCell.addClass("active" + playerInt)
+  else if (x.keyCode === 82) {
+    location.reload();
   }
-  
-function checkForVictory (nextCell, playerInt) {
-  if (!$(nextCell).is("td")) {
-    alert("Player " + playerInt + " wins!")
-    window.location.reload()
- }
 }
+
+document.addEventListener("keyup", keyPress); 
+

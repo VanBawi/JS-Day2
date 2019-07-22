@@ -24,8 +24,8 @@ function validateForm() {
     return false;
   }
 
-  if( document.Zip.value == "" || isNaN( document.Zip.value ) ||
-    document.Zip.value.length != 5 ) {
+  if( document.myForm.Zip.value == "" || isNaN( document.myForm.Zip.value ) ||
+    document.myForm.Zip.value.length != 5 ) {
             
     alert( "Please provide a zip in the format 55200." );
     document.Zip.focus() ;
@@ -56,3 +56,4 @@ function validateForm() {
   }
   return( true );
 }
+document.getElementById("btn").addEventListener("submit", validateForm);
