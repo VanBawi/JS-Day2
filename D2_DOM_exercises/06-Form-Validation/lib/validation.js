@@ -1,5 +1,22 @@
 // TODO: Validate this form
 
+
+
+
+// eamil validation part
+// function ValidateEmail(inputText){
+//   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//   if(inputText.value.match(mailformat))
+//   {
+//     document.form1.text1.focus();
+//     return true;
+//   }else{
+//     alert("You have entered an invalid email address!");
+//     document.form1.text1.focus();
+//     return false;
+//   }
+// }
+
 function validateForm() {
   var x = document.forms["myForm"]["first_name"].value;
   if (x == "") {
@@ -38,7 +55,8 @@ function validateForm() {
   }
 
   var f = document.forms["myForm"]["mobile_phone"].value;
-  if (f == "") {
+  var phoneno = /^\d{10}$/;
+  if (f !== phoneno) {
     alert("Phone must be filled out");
     return false;
   }
@@ -50,10 +68,13 @@ function validateForm() {
   }
   var e = document.forms["myForm"]["email"].value;
   // eslint-disable-next-line no-undef
-  if (e !== /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  var validemail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (e !== validemail) {
     alert("Enter Valid email! must be filled out");
     return false;    
   }
-  return( true );
+  return(true);
 }
-document.getElementById("btn").addEventListener("submit", validateForm);
+var hello = document.getElementsByClassName("btn");
+hello.addEventListener("click", validateForm);
+

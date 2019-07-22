@@ -2,12 +2,16 @@
 
 const hasNewMessage = () => {
   // TODO: return true with a probability of 20%.
+  return Math.random < 0.2;
 
 };
 
 const newMessage = () => {
   // TODO: return a random message as an object with two keys, subject and sender
-
+  subjects = ["New Jobs are available", "Hiring soon", "Doom day"];
+  sender = ["orderlist", "clerk", "sales !"];
+  return (subjects: subjects)
+  
 };
 
 const appendMessageToDom = (message) => {
@@ -18,20 +22,9 @@ const appendMessageToDom = (message) => {
 const refresh = () => {
   // TODO: Implement the global refresh logic. If there is a new message,
   //       append it to the DOM. Update the unread counter in title as well.
-  
+
+
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
